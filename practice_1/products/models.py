@@ -6,16 +6,18 @@ User = get_user_model()
 
 # Create your models here.
 class Category(models.Model):
-    name = models.CharField(max_length=20)
+    name: models.CharField = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
 
 
 class Details(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField()
-    models = models.CharField(max_length=150, null=True, blank=True)
+    name: models.CharField = models.CharField(max_length=200)
+    description: models.TextField = models.TextField()
+    model: models.CharField = models.CharField(
+        max_length=150, null=True, blank=True
+    )
 
 
 class Products(models.Model):

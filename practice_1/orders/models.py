@@ -5,7 +5,9 @@ User = get_user_model()
 
 
 class Orders(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE)  # owner
-    price = models.PositiveIntegerField()
-    description = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    owner: models.ForeignKey = models.ForeignKey(
+        User, on_delete=models.CASCADE
+    )  # owner
+    price: models.PositiveIntegerField = models.PositiveIntegerField()
+    description: models.TextField = models.TextField()
+    date: models.DateTimeField = models.DateTimeField(auto_now_add=True)
