@@ -12,12 +12,12 @@ class Category(models.Model):
         return self.name
 
 
-class Details(models.Model):
-    name: models.CharField = models.CharField(max_length=200)
-    description: models.TextField = models.TextField()
-    model: models.CharField = models.CharField(
-        max_length=150, null=True, blank=True
-    )
+# class Details(models.Model):
+#     name: models.CharField = models.CharField(max_length=200)
+#     description: models.TextField = models.TextField()
+#     model: models.CharField = models.CharField(
+#         max_length=150, null=True, blank=True
+#     )
 
 
 class Products(models.Model):
@@ -28,6 +28,5 @@ class Products(models.Model):
     updated_at: models.DateTimeField = models.DateTimeField(
         blank=True, null=True
     )
-    # details = models.OneToOneField(Details)
-    # category = models.ManyToManyField(Category),
-    # user = models.ForeignKey(User,on_delete=models.CASCADE)
+    category: tuple = (models.ManyToManyField(Category),)
+    # seller = models.ForeignKey(Sellers,on_delete=models.CASCADE)
