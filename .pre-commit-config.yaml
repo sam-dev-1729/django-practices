@@ -22,6 +22,8 @@ repos:
       hooks:
           - id: prettier
             args: ['--tab-width', '4', '--single-quote']
+            entry: prettier --write --ignore-unknown
+            # entry: prettier --write --list-different --ignore-unknown (default command)
             exclude: 'templates/'
 
     - repo: https://github.com/PyCQA/autoflake
